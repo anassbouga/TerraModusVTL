@@ -436,7 +436,7 @@ public class DevisPersonneAmiableService {
                             for (XWPFRun run2 : paragraph2.getRuns()) {
                                 String runText2 = run2.getText(0);
                                 if (runText2.contains("Q"+index)) {
-                                    runText2 = runText2.replace("Q"+index, "01");
+                                    runText2 = runText2.replace("Q"+index, new DecimalFormat("00").format(q));
                                     run2.setText(runText2, 0);
                                 }
                             }
@@ -463,9 +463,9 @@ public class DevisPersonneAmiableService {
                             for (XWPFRun run2 : paragraph2.getRuns()) {
                                 String runText2 = run2.getText(0);
                                 if (runText2.contains("CP"+index)) {
-                                    runText2 = runText2.replace("CP"+index, consDocsCel5Cop1[0]);
+                                    runText2 = runText2.replace("CP"+index, String.valueOf(new DecimalFormat(".00",new DecimalFormatSymbols(Locale.US)).format(Double.parseDouble(consDocsCel5Cop1[0]) * q)));
                                     if (!consDocsCel5Cop1[0].equals("--"))
-                                        HT += Double.valueOf(consDocsCel5Cop1[0]);
+                                        HT += Double.valueOf(consDocsCel5Cop1[0]) * q;
                                     run2.setText(runText2, 0);
                                 }
                             }
@@ -651,7 +651,7 @@ public class DevisPersonneAmiableService {
                             for (XWPFRun run2 : paragraph2.getRuns()) {
                                 String runText2 = run2.getText(0);
                                 if (runText2.contains("Q"+index1)) {
-                                    runText2 = runText2.replace("Q"+index1, "01");
+                                    runText2 = runText2.replace("Q"+index1, new DecimalFormat("00").format(q));
                                     run2.setText(runText2, 0);
                                 }
                             }
@@ -848,7 +848,7 @@ public class DevisPersonneAmiableService {
                             for (XWPFRun run2 : paragraph2.getRuns()) {
                                 String runText2 = run2.getText(0);
                                 if (runText2.contains("QS"+index1)) {
-                                    runText2 = runText2.replace("QS"+index1, "01");
+                                    runText2 = runText2.replace("QS"+index1, new DecimalFormat("00").format(q));
                                     run2.setText(runText2, 0);
                                 }
                             }
