@@ -1100,7 +1100,7 @@ public class DevisSteAmiableService {
             document.close();
             outputStream1.close();
             File file = new File("src/main/resources/exported_report.docx");
-            emailService.sendHtmlMessage("ouadi3laila@gmail.com", "Demande Devis", byteArray, file);
+            emailService.sendHtmlMessage("anassbougaterra@gmail.com", "Demande Devis", byteArray, file);
             return savedDevis;
         }
         public List<DevisSteAmiable> findAll() {
